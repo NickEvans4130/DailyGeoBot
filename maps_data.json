@@ -1,0 +1,1162 @@
+[
+  {
+    "id": "6636a36a5054eeed5ecf8e7a",
+    "name": "Osi's Life",
+    "slug": "6636a36a5054eeed5ecf8e7a",
+    "description": null,
+    "url": "/maps/6636a36a5054eeed5ecf8e7a",
+    "playUrl": "/6636a36a5054eeed5ecf8e7a/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": -26.438563218333687,
+        "lng": -9.139834614726052
+      },
+      "max": {
+        "lat": 54.9741477992014,
+        "lng": 54.6431244
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "30",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-04T21:21:21.6430000Z",
+    "updatedAt": "2024-05-29T12:31:05.8960000Z",
+    "numFinishedGames": 37,
+    "likedByUser": null,
+    "averageScore": 23300,
+    "avatar": {
+      "background": "evening",
+      "decoration": "cactus",
+      "ground": "yellow",
+      "landscape": "skyline"
+    },
+    "difficulty": "VERY EASY",
+    "difficultyLevel": 1,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 10886772,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "663ddf9b4c2ece4ae4e4983a",
+    "name": "World Challenge ",
+    "slug": "663ddf9b4c2ece4ae4e4983a",
+    "description": "Locations from my 2024 World Challenge Expedition\n",
+    "url": "/maps/663ddf9b4c2ece4ae4e4983a",
+    "playUrl": "/663ddf9b4c2ece4ae4e4983a/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": -26.7952647956054,
+        "lng": -0.44711019999999996
+      },
+      "max": {
+        "lat": 51.4590666,
+        "lng": 54.647033
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "26",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-10T09:13:48.5000000Z",
+    "updatedAt": "2024-05-11T01:31:27.3350000Z",
+    "numFinishedGames": 14,
+    "likedByUser": null,
+    "averageScore": 24905,
+    "avatar": {
+      "background": "morning",
+      "decoration": "tractor",
+      "ground": "beige",
+      "landscape": "forest"
+    },
+    "difficulty": "VERY EASY",
+    "difficultyLevel": 1,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 10226399,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "6643216d742a754817720865",
+    "name": "A Skewed Indonesia ",
+    "slug": "6643216d742a754817720865",
+    "description": "AI Generated Locations covering whole of indo",
+    "url": "/maps/6643216d742a754817720865",
+    "playUrl": "/6643216d742a754817720865/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": -10.932093070199176,
+        "lng": 97.32690941239152
+      },
+      "max": {
+        "lat": 4.106978130472527,
+        "lng": 125.26087496932462
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "1000+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-14T08:31:54.4150000Z",
+    "updatedAt": "2024-05-14T08:33:50.3330000Z",
+    "numFinishedGames": 2,
+    "likedByUser": null,
+    "averageScore": 4188,
+    "avatar": {
+      "background": "sunset",
+      "decoration": "tractor",
+      "ground": "beige",
+      "landscape": "skyline"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 3514751,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "664324782d371a93350eacf4",
+    "name": "North Europe Practice",
+    "slug": "664324782d371a93350eacf4",
+    "description": "3k in each: Norway, Sweden, Finland, Denmark, Estonia, Lithuania, Latvia",
+    "url": "/maps/664324782d371a93350eacf4",
+    "playUrl": "/664324782d371a93350eacf4/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": 53.93625861968805,
+        "lng": 4.729795768421095
+      },
+      "max": {
+        "lat": 71.0545636885779,
+        "lng": 31.44385887280934
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "10K+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-14T08:45:18.3690000Z",
+    "updatedAt": "2024-05-14T08:45:18.4350000Z",
+    "numFinishedGames": 4,
+    "likedByUser": null,
+    "averageScore": 9122,
+    "avatar": {
+      "background": "sunset",
+      "decoration": "cactus",
+      "ground": "yellow",
+      "landscape": "skyline"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 2304359,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "664329495637252452e8d768",
+    "name": "Balkan Practice",
+    "slug": "664329495637252452e8d768",
+    "description": "3000 In Each: Croatia, Albania, Montenegro, North Macedonia, Greece, Bulgaria, Romania",
+    "url": "/maps/664329495637252452e8d768",
+    "playUrl": "/664329495637252452e8d768/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": 34.96764405557823,
+        "lng": 13.50924291529621
+      },
+      "max": {
+        "lat": 48.240441870748654,
+        "lng": 29.155289093715034
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "10K+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-14T09:06:02.0100000Z",
+    "updatedAt": "2024-05-14T09:06:02.1360000Z",
+    "numFinishedGames": 1,
+    "likedByUser": null,
+    "averageScore": 9557,
+    "avatar": {
+      "background": "day",
+      "decoration": "cactus",
+      "ground": "blue",
+      "landscape": "grassmountains"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 1959679,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "664401c038023011674cb161",
+    "name": "Practice Map for Will",
+    "slug": "664401c038023011674cb161",
+    "description": null,
+    "url": "/maps/664401c038023011674cb161",
+    "playUrl": "/664401c038023011674cb161/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": -46.59363505703533,
+        "lng": -92.17537502711595
+      },
+      "max": {
+        "lat": 71.10085848764714,
+        "lng": 178.39550157160645
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "10K+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-15T00:29:33.0590000Z",
+    "updatedAt": "2024-05-23T23:04:33.4850000Z",
+    "numFinishedGames": 4,
+    "likedByUser": null,
+    "averageScore": 14140,
+    "avatar": {
+      "background": "sunrise",
+      "decoration": "tractor",
+      "ground": "blue",
+      "landscape": "snowmountains"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 14816132,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "66489eec7a3632097b5c1fbf",
+    "name": "50/50 Practice (Qatar + UAE)",
+    "slug": "66489eec7a3632097b5c1fbf",
+    "description": "NMPZ + No Car Script",
+    "url": "/maps/66489eec7a3632097b5c1fbf",
+    "playUrl": "/66489eec7a3632097b5c1fbf/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": 24.772613689677748,
+        "lng": 50.81146927138967
+      },
+      "max": {
+        "lat": 26.140323442133894,
+        "lng": 56.37218427388428
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "1000+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-18T12:28:49.3450000Z",
+    "updatedAt": "2024-05-18T12:29:31.8100000Z",
+    "numFinishedGames": 58,
+    "likedByUser": null,
+    "averageScore": 13031,
+    "avatar": {
+      "background": "day",
+      "decoration": "smalltrees",
+      "ground": "blue",
+      "landscape": "houses"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 578574,
+    "likes": 1,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "664e5dac632f7781d965b616",
+    "name": "Island Practice",
+    "slug": "664e5dac632f7781d965b616",
+    "description": "Randomly skewed to make it more interesting",
+    "url": "/maps/664e5dac632f7781d965b616",
+    "playUrl": "/664e5dac632f7781d965b616/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": 27.63898696766604,
+        "lng": -27.37568270131151
+      },
+      "max": {
+        "lat": 38.80048740454068,
+        "lng": -13.422033601978267
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "1000+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-05-22T21:04:15.3600000Z",
+    "updatedAt": "2024-05-23T18:22:42.0120000Z",
+    "numFinishedGames": 2,
+    "likedByUser": null,
+    "averageScore": 9276,
+    "avatar": {
+      "background": "evening",
+      "decoration": "cactus",
+      "ground": "blue",
+      "landscape": "mountains"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 1791769,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "665dc39f6037f940dd34a9a8",
+    "name": "Test",
+    "slug": "665dc39f6037f940dd34a9a8",
+    "description": null,
+    "url": "/maps/665dc39f6037f940dd34a9a8",
+    "playUrl": "/665dc39f6037f940dd34a9a8/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": 27.1318469,
+        "lng": -9.600201355012537
+      },
+      "max": {
+        "lat": 57.97367159157283,
+        "lng": 37.3185083
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "5",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-06-03T13:23:17.0950000Z",
+    "updatedAt": "2024-06-03T13:23:17.0960000Z",
+    "numFinishedGames": 1,
+    "likedByUser": null,
+    "averageScore": 7993,
+    "avatar": {
+      "background": "night",
+      "decoration": "palmtrees",
+      "ground": "blue",
+      "landscape": "mountains"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 4986751,
+    "likes": 0,
+    "locationSelectionMode": 1
+  },
+  {
+    "id": "6683c4979e76165f261943b8",
+    "name": "YHFpcAXs3dpTfsop",
+    "slug": "6683c4979e76165f261943b8",
+    "description": null,
+    "url": "/maps/6683c4979e76165f261943b8",
+    "playUrl": "/6683c4979e76165f261943b8/play",
+    "published": true,
+    "banned": false,
+    "images": {
+      "backgroundLarge": null,
+      "incomplete": true
+    },
+    "bounds": {
+      "min": {
+        "lat": 48.56186872275219,
+        "lng": 11.743161678314209
+      },
+      "max": {
+        "lat": 65.1493037640979,
+        "lng": 52.87597417831421
+      }
+    },
+    "customCoordinates": null,
+    "coordinateCount": "1M+",
+    "regions": null,
+    "creator": {
+      "nick": "Osirey",
+      "created": "2019-10-30T20:19:35.6820000Z",
+      "isProUser": true,
+      "type": "Pro",
+      "consumedTrial": true,
+      "isVerified": false,
+      "pin": {
+        "url": "pin/ca16808fd5751f10dd5baec1601d6858.png",
+        "anchor": "center-center",
+        "isDefault": false
+      },
+      "fullBodyPin": "pin/45dc225f9ad35aa89ef68e836ac46da0.png",
+      "color": 0,
+      "url": "/user/5db9f057dfa5102130eaf747",
+      "id": "5db9f057dfa5102130eaf747",
+      "countryCode": "gb",
+      "br": {
+        "level": 102,
+        "division": 50
+      },
+      "streakProgress": null,
+      "explorerProgress": null,
+      "dailyChallengeProgress": 0,
+      "progress": {
+        "xp": 449670,
+        "level": 102,
+        "levelXp": 443590,
+        "nextLevel": 103,
+        "nextLevelXp": 455240,
+        "title": {
+          "id": 310,
+          "tierId": 110
+        },
+        "competitionMedals": {
+          "bronze": 0,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0
+        }
+      },
+      "competitive": {
+        "elo": 548,
+        "rating": 1049,
+        "lastRatingChange": 16,
+        "division": {
+          "type": 40,
+          "startRating": 850,
+          "endRating": 1100
+        },
+        "onLeaderboard": true
+      },
+      "lastNameChange": "2000-01-01T00:00:00.0000000Z",
+      "lastNickOrCountryChange": "2000-01-01T00:00:00.0000000Z",
+      "isBanned": false,
+      "chatBan": false,
+      "nameChangeAvailableAt": null,
+      "avatar": {
+        "fullBodyPath": "pin/45dc225f9ad35aa89ef68e836ac46da0.png"
+      },
+      "isBotUser": false,
+      "suspendedUntil": null,
+      "wallet": null,
+      "flair": 0,
+      "isCreator": false,
+      "isAppAnonymous": false
+    },
+    "createdAt": "2024-07-02T09:13:10.9650000Z",
+    "updatedAt": "2024-07-02T12:43:50.5970000Z",
+    "numFinishedGames": 0,
+    "likedByUser": null,
+    "averageScore": 0,
+    "avatar": {
+      "background": "evening",
+      "decoration": "palmtrees",
+      "ground": "green",
+      "landscape": "snowmountains"
+    },
+    "difficulty": "MEDIUM",
+    "difficultyLevel": 3,
+    "highscore": null,
+    "isUserMap": true,
+    "highlighted": false,
+    "free": false,
+    "panoramaProvider": "StreetView",
+    "inExplorerMode": false,
+    "maxErrorDistance": 3019999,
+    "likes": 0,
+    "locationSelectionMode": 2
+  }
+]

@@ -1,17 +1,19 @@
 import os
-import time
 import requests
 import schedule
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 from dotenv import load_dotenv
 import random as r
 import datetime
 from datetime import date
 import asyncio
+import random
+import string
+import json
 
 today = date.today()
-yesterday = (today - datetime.timedelta(days=1)).strftime("%d/%m/%Y")
+yesterday = (today - datetime.timedelta(days=1)).strftime(r"%d/%m/%Y")
 
 # Load environment variables
 load_dotenv()
@@ -27,6 +29,7 @@ POST_TIME = os.getenv('POST_TIME')
 SIGNIN_URL = "https://www.geoguessr.com/api/v3/accounts/signin"
 MAP_CHALLENGE_URL = "https://www.geoguessr.com/api/v3/challenges"
 LEADERBOARD_URL_TEMPLATE = "https://www.geoguessr.com/api/v3/results/highscores/{challenge_token}"
+USER_MAPS_URL_TEMPLATE = "https://www.geoguessr.com/api/v3/profiles/maps"
 
 # Discord bot setup
 intents = discord.Intents.default()
@@ -37,12 +40,76 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 current_challenge_token = None
 
+# Function to save user data to JSON
+def save_user_data(discord_id, geoguessr_username):
+    try:
+        with open('user_data.json', 'r') as f:
+            user_data = json.load(f)
+    except FileNotFoundError:
+        user_data = {}
+
+    user_data[discord_id] = geoguessr_username
+
+    with open('user_data.json', 'w') as f:
+        json.dump(user_data, f)
+
+# Function to generate a unique key
+def generate_unique_key():
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=16))
+
+class SyncView(discord.ui.View):
+    def __init__(self, bot, geoguessr_username, unique_key):
+        super().__init__(timeout=300)
+        self.bot = bot
+        self.geoguessr_username = geoguessr_username
+        self.unique_key = unique_key
+
+    @discord.ui.button(label="Verify", style=discord.ButtonStyle.primary)
+    async def verify_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await interaction.response.defer()
+        await self.verify_user(interaction.user, interaction)
+
+    async def verify_user(self, user, interaction):
+        try:
+            signin_payload = {
+                "email": EMAIL,
+                "password": PASSWORD
+            }
+            with requests.Session() as session:
+                signin_response = session.post(SIGNIN_URL, json=signin_payload)
+                signin_response.raise_for_status()
+
+                maps_response = session.get(USER_MAPS_URL_TEMPLATE)
+                maps_response.raise_for_status()
+                maps_data = maps_response.json()
+                
+                # Ensure the structure matches the JSON file
+                map_names = [map_data['name'] for map_data in maps_data]
+            
+                if self.unique_key in map_names:
+                    save_user_data(str(user.id), self.geoguessr_username)
+                    await interaction.followup.send(f"Your GeoGuessr account has been successfully linked.", ephemeral=True)
+                else:
+                    await interaction.followup.send("The verification key was not found on your GeoGuessr account. Please try again.", ephemeral=True)
+        except Exception as e:
+            print(f"Error: {e}")
+            await interaction.followup.send("An error occurred during verification. Please try again.", ephemeral=True)
+
+
+
 class MyBot(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     def generate_challenge(self):
-        maps = ["62a44b22040f04bd36e8a914","63f3ff1e0355e40ded075e0c","64919f3c95165ff26469091a","6165f7176c26ac00016bca3d","643dbc7ccc47d3a344307998","6089bfcff6a0770001f645dd"]
+        maps = [
+                "62a44b22040f04bd36e8a914",
+                "63f3ff1e0355e40ded075e0c",
+                "64919f3c95165ff26469091a",
+                "6165f7176c26ac00016bca3d",
+                "643dbc7ccc47d3a344307998",
+                "6089bfcff6a0770001f645dd"
+                ]
         options = [[True,True,True],[True,False,False],[False,False,False]]
 
         gamemode = r.choice(options)
@@ -128,6 +195,19 @@ class MyBot(commands.Cog):
         except Exception as e:
             print(f"Error: {e}")
             await interaction.response.send_message("Error retrieving leaderboard.")
+
+    @discord.app_commands.command(name="sync", description="Link your GeoGuessr account with your Discord account")
+    async def sync(self, interaction: discord.Interaction, geoguessr_username: str):
+        unique_key = generate_unique_key()
+        user = interaction.user
+
+        try:
+            await user.send(f"Please set the following key as a map name on your GeoGuessr account: {unique_key}")
+            view = SyncView(self.bot, geoguessr_username, unique_key)
+            await user.send("Once you've set the key as a map name, click the button below to verify:", view=view)
+            await interaction.response.send_message("A verification message has been sent to your DMs.", ephemeral=True)
+        except discord.Forbidden:
+            await interaction.response.send_message("I couldn't send you a DM. Please make sure your DMs are open.", ephemeral=True)
 
     @discord.app_commands.command(name="test")
     async def test(self, interaction: discord.Interaction):

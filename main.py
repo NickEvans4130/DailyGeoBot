@@ -3,6 +3,7 @@ import requests
 import schedule
 import discord
 from discord.ext import commands
+from discord.ext.commands import has_permissions, CheckFailure
 from dotenv import load_dotenv
 import random as r
 import datetime
@@ -20,10 +21,22 @@ load_dotenv()
 EMAIL = os.getenv('EMAIL')
 PASSWORD = os.getenv('PASSWORD')
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
-CHALLENGE_CHANNEL_ID = int(os.getenv('CHALLENGE_CHANNEL_ID'))
-LEADERBOARD_CHANNEL_ID = int(os.getenv("LEADERBOARD_CHANNEL_ID"))
 
 POST_TIME = os.getenv('POST_TIME')
+
+# Load or initialize configuration
+config_file = 'config.json'
+if os.path.exists(config_file):
+    with open(config_file, 'r') as f:
+        config = json.load(f)
+else:
+    config = {
+        "CHALLENGE_CHANNEL_ID": int(os.getenv('CHALLENGE_CHANNEL_ID')),
+        "LEADERBOARD_CHANNEL_ID": int(os.getenv("LEADERBOARD_CHANNEL_ID")),
+        "POST_TIME": POST_TIME,
+        "RANDOM_SETTINGS": True,
+        "DISABLE_MOVING": False
+    }
 
 # GeoGuessr API endpoints
 SIGNIN_URL = "https://www.geoguessr.com/api/v3/accounts/signin"
@@ -96,7 +109,6 @@ class SyncView(discord.ui.View):
             await interaction.followup.send("An error occurred during verification. Please try again.", ephemeral=True)
 
 
-
 class MyBot(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -110,16 +122,22 @@ class MyBot(commands.Cog):
                 "643dbc7ccc47d3a344307998",
                 "6089bfcff6a0770001f645dd"
                 ]
-        options = [[True,True,True],[True,False,False],[False,False,False]]
-
-        gamemode = r.choice(options)
+        
+        if not config['RANDOM_SETTINGS']:
+            gamemmodeOptions = [[True,True,True],[True,False,False],[False,False,False]]
+            gamemode = r.choice(gamemmodeOptions)
+            timeOptions = [10,15,30,45,60]
+            time_limit = r.choice(timeOptions)
+        else:
+            gamemode = [not config['DISABLE_MOVING'], True, True]  # Example fixed settings
+            time_limit = 60  # Example fixed time limit
 
         params = {
             "map": r.choice(maps),
             "forbidMoving": gamemode[0],
             "forbidZooming": gamemode[1],
             "forbidRotating": gamemode[2],
-            "timeLimit": r.randint(10,100),
+            "timeLimit": time_limit,
             "type": "standard"
         }
         return params
@@ -165,7 +183,7 @@ class MyBot(commands.Cog):
             current_challenge_token = self.create_map_challenge()
             challenge_url = f"https://www.geoguessr.com/challenge/{current_challenge_token}"
 
-            channel = self.bot.get_channel(CHALLENGE_CHANNEL_ID)
+            channel = self.bot.get_channel(config['CHALLENGE_CHANNEL_ID'])
             embed = discord.Embed(title="New GeoGuessr Challenge!", description=f"GeoGuessr Challenge for the specified map: [Play Now]({challenge_url})", color=discord.Color.green())
             embed.set_footer(text="Good luck!")
             await channel.send(embed=embed)
@@ -174,7 +192,7 @@ class MyBot(commands.Cog):
 
     async def post_leaderboard(self, interaction):
         try:
-            channel = self.bot.get_channel(LEADERBOARD_CHANNEL_ID)
+            channel = self.bot.get_channel(config['LEADERBOARD_CHANNEL_ID'])
             if current_challenge_token is None:
                 await interaction.response.send_message("No challenge has been posted yet.")
                 return
@@ -218,8 +236,36 @@ class MyBot(commands.Cog):
     async def finish(self, interaction: discord.Interaction):
         await self.post_leaderboard(interaction)
 
+    @discord.app_commands.command(name="setup", description="Command for server admins to set the parameters for their challenge.")
+    @discord.app_commands.describe(post_time="Enter what time you want the daily challenge to post",
+                                   random_settings="Enter whether you want game mode parameters and time to be randomized",
+                                   challenge_channel="Enter the channel ID for where you want the daily challenge to be posted",
+                                   leaderboard_channel="Enter the channel ID for where you want the leaderboard to be posted",
+                                   disable_moving="Some people don't like moving, choose 'yes' to disable moving in all challenges.")
+    @discord.app_commands.choices(
+        random_settings=[
+            discord.app_commands.Choice(name="Yes", value=1),
+            discord.app_commands.Choice(name="No", value=2)
+        ],
+        disable_moving=[
+            discord.app_commands.Choice(name="Yes", value=1),
+            discord.app_commands.Choice(name="No", value=2)
+        ]
+    )
+    async def setup(self, interaction: discord.Interaction, post_time: float, random_settings: int, challenge_channel: str, leaderboard_channel: str, disable_moving: int):
+        config['POST_TIME'] = post_time
+        config['CHALLENGE_CHANNEL_ID'] = int(challenge_channel)
+        config['LEADERBOARD_CHANNEL_ID'] = int(leaderboard_channel)
+        config['RANDOM_SETTINGS'] = random_settings == 1
+        config['DISABLE_MOVING'] = disable_moving == 1
+
+        with open(config_file, 'w') as f:
+            json.dump(config, f)
+
+        await interaction.response.send_message("Configuration updated successfully.", ephemeral=True)
+
     def schedule_map_challenge(self):
-        schedule.every().day.at(POST_TIME).do(lambda: self.bot.loop.create_task(self.post_map_challenge()))
+        schedule.every().day.at(config['POST_TIME']).do(lambda: self.bot.loop.create_task(self.post_map_challenge()))
 
 async def setup(bot):
     cog = MyBot(bot)

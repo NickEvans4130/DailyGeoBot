@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 import random as r
 import datetime
 from datetime import date
-import asyncio 
+import asyncio
 
 today = date.today()
 yesterday = (today - datetime.timedelta(days=1)).strftime("%d/%m/%Y")
@@ -99,7 +99,9 @@ class MyBot(commands.Cog):
             challenge_url = f"https://www.geoguessr.com/challenge/{current_challenge_token}"
 
             channel = self.bot.get_channel(CHALLENGE_CHANNEL_ID)
-            await channel.send(f"GeoGuessr Challenge for the specified map: {challenge_url}")
+            embed = discord.Embed(title="New GeoGuessr Challenge!", description=f"GeoGuessr Challenge for the specified map: [Play Now]({challenge_url})", color=discord.Color.green())
+            embed.set_footer(text="Good luck!")
+            await channel.send(embed=embed)
         except Exception as e:
             print(f"Error: {e}")
 
@@ -115,13 +117,14 @@ class MyBot(commands.Cog):
                 await channel.send("No leaderboard data available.")
                 return
 
-            leaderboard_message = f"Leaderboard for {yesterday}:\n"
+            embed = discord.Embed(title=f"Leaderboard for {yesterday}", color=discord.Color.blue())
             for item in leaderboard_items:
                 player_name = item['playerName']
                 total_score = item['totalScore']
-                leaderboard_message += f"{player_name}: {total_score} points\n"
+                embed.add_field(name=player_name, value=f"{total_score} points", inline=False)
 
-            await channel.send(leaderboard_message)
+            await channel.send(embed=embed)
+            await interaction.response.send_message("Leaderboard posted.")
         except Exception as e:
             print(f"Error: {e}")
             await interaction.response.send_message("Error retrieving leaderboard.")
@@ -134,7 +137,6 @@ class MyBot(commands.Cog):
     @discord.app_commands.command(name="finish")
     async def finish(self, interaction: discord.Interaction):
         await self.post_leaderboard(interaction)
-        await interaction.response.send_message("Leaderboard posted.")
 
     def schedule_map_challenge(self):
         schedule.every().day.at(POST_TIME).do(lambda: self.bot.loop.create_task(self.post_map_challenge()))

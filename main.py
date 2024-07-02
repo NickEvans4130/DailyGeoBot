@@ -3,11 +3,12 @@ import time
 import requests
 import schedule
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from dotenv import load_dotenv
 import random as r
 import datetime
 from datetime import date
+import asyncio 
 
 today = date.today()
 yesterday = (today - datetime.timedelta(days=1)).strftime("%d/%m/%Y")
@@ -36,106 +37,120 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 current_challenge_token = None
 
-def generate_challenge():
-  maps = ["62a44b22040f04bd36e8a914","63f3ff1e0355e40ded075e0c","64919f3c95165ff26469091a","6165f7176c26ac00016bca3d","643dbc7ccc47d3a344307998","6089bfcff6a0770001f645dd"]
-  options = [[True,True,True],[True,False,False],[False,False,False]]
+class MyBot(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
 
-  gamemode = r.choice(options)
+    def generate_challenge(self):
+        maps = ["62a44b22040f04bd36e8a914","63f3ff1e0355e40ded075e0c","64919f3c95165ff26469091a","6165f7176c26ac00016bca3d","643dbc7ccc47d3a344307998","6089bfcff6a0770001f645dd"]
+        options = [[True,True,True],[True,False,False],[False,False,False]]
 
-  params = {
-      "map": r.choice(maps),
-      "forbidMoving": gamemode[0],
-      "forbidZooming": gamemode[1],
-      "forbidRotating": gamemode[2],
-      "timeLimit": r.randint(10,100),
-      "type": "standard"
-  }
-  return params
+        gamemode = r.choice(options)
+
+        params = {
+            "map": r.choice(maps),
+            "forbidMoving": gamemode[0],
+            "forbidZooming": gamemode[1],
+            "forbidRotating": gamemode[2],
+            "timeLimit": r.randint(10,100),
+            "type": "standard"
+        }
+        return params
+
+    @commands.Cog.listener()
+    async def on_ready(self):
+        print(f'Logged in as {self.bot.user.name}')
+        await bot.tree.sync()
+
+    def create_map_challenge(self):
+        signin_payload = {
+            "email": EMAIL,
+            "password": PASSWORD
+        }
+        with requests.Session() as session:
+            signin_response = session.post(SIGNIN_URL, json=signin_payload)
+            signin_response.raise_for_status()
+
+            map_challenge_payload = self.generate_challenge()
+            challenge_response = session.post(MAP_CHALLENGE_URL, json=map_challenge_payload)
+            challenge_response.raise_for_status()
+            challenge_data = challenge_response.json()
+            return challenge_data['token']
+
+    def get_leaderboard(self, challenge_token):
+        signin_payload = {
+            "email": EMAIL,
+            "password": PASSWORD
+        }
+        with requests.Session() as session:
+            signin_response = session.post(SIGNIN_URL, json=signin_payload)
+            signin_response.raise_for_status()
+
+            leaderboard_url = LEADERBOARD_URL_TEMPLATE.format(challenge_token=challenge_token)
+            leaderboard_response = session.get(leaderboard_url)
+            leaderboard_response.raise_for_status()
+            leaderboard_data = leaderboard_response.json()
+            return leaderboard_data['items']
+
+    async def post_map_challenge(self):
+        global current_challenge_token
+        try:
+            current_challenge_token = self.create_map_challenge()
+            challenge_url = f"https://www.geoguessr.com/challenge/{current_challenge_token}"
+
+            channel = self.bot.get_channel(CHALLENGE_CHANNEL_ID)
+            await channel.send(f"GeoGuessr Challenge for the specified map: {challenge_url}")
+        except Exception as e:
+            print(f"Error: {e}")
+
+    async def post_leaderboard(self, interaction):
+        try:
+            channel = self.bot.get_channel(LEADERBOARD_CHANNEL_ID)
+            if current_challenge_token is None:
+                await interaction.response.send_message("No challenge has been posted yet.")
+                return
+
+            leaderboard_items = self.get_leaderboard(current_challenge_token)
+            if not leaderboard_items:
+                await channel.send("No leaderboard data available.")
+                return
+
+            leaderboard_message = f"Leaderboard for {yesterday}:\n"
+            for item in leaderboard_items:
+                player_name = item['playerName']
+                total_score = item['totalScore']
+                leaderboard_message += f"{player_name}: {total_score} points\n"
+
+            await channel.send(leaderboard_message)
+        except Exception as e:
+            print(f"Error: {e}")
+            await interaction.response.send_message("Error retrieving leaderboard.")
+
+    @discord.app_commands.command(name="test")
+    async def test(self, interaction: discord.Interaction):
+        await self.post_map_challenge()
+        await interaction.response.send_message("Test complete: Map challenge posted.")
+
+    @discord.app_commands.command(name="finish")
+    async def finish(self, interaction: discord.Interaction):
+        await self.post_leaderboard(interaction)
+        await interaction.response.send_message("Leaderboard posted.")
+
+    def schedule_map_challenge(self):
+        schedule.every().day.at(POST_TIME).do(lambda: self.bot.loop.create_task(self.post_map_challenge()))
+
+async def setup(bot):
+    cog = MyBot(bot)
+    await bot.add_cog(cog)
+    cog.schedule_map_challenge()
 
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user}')
+    await bot.tree.sync()  # Sync the slash commands with Discord
 
-def create_map_challenge():
-    signin_payload = {
-        "email": EMAIL,
-        "password": PASSWORD
-    }
-    with requests.Session() as session:
-        signin_response = session.post(SIGNIN_URL, json=signin_payload)
-        signin_response.raise_for_status()
+async def main():
+    async with bot:
+        await setup(bot)
+        await bot.start(DISCORD_TOKEN)
 
-        map_challenge_payload = generate_challenge()
-        challenge_response = session.post(MAP_CHALLENGE_URL, json=map_challenge_payload)
-        challenge_response.raise_for_status()
-        challenge_data = challenge_response.json()
-        return challenge_data['token']
-
-def get_leaderboard(challenge_token):
-    signin_payload = {
-        "email": EMAIL,
-        "password": PASSWORD
-    }
-    with requests.Session() as session:
-        signin_response = session.post(SIGNIN_URL, json=signin_payload)
-        signin_response.raise_for_status()
-
-        leaderboard_url = LEADERBOARD_URL_TEMPLATE.format(challenge_token=challenge_token)
-        leaderboard_response = session.get(leaderboard_url)
-        leaderboard_response.raise_for_status()
-        leaderboard_data = leaderboard_response.json()
-        return leaderboard_data['items']
-
-async def post_map_challenge():
-    global current_challenge_token
-    try:
-        current_challenge_token = create_map_challenge()
-        challenge_url = f"https://www.geoguessr.com/challenge/{current_challenge_token}"
-
-        channel = bot.get_channel(CHALLENGE_CHANNEL_ID)
-        await channel.send(f"GeoGuessr Challenge for the specified map: {challenge_url}")
-    except Exception as e:
-        print(f"Error: {e}")
-
-async def post_leaderboard(ctx):
-    try:
-        channel = bot.get_channel(LEADERBOARD_CHANNEL_ID)
-        if current_challenge_token is None:
-            await ctx.send("No challenge has been posted yet.")
-            return
-
-        leaderboard_items = get_leaderboard(current_challenge_token)
-        if not leaderboard_items:
-            await channel.send("No leaderboard data available.")
-            return
-
-        leaderboard_message = f"Leaderboard for {yesterday}:\n"
-        for item in leaderboard_items:
-            player_name = item['playerName']
-            total_score = item['totalScore']
-            leaderboard_message += f"{player_name}: {total_score} points\n"
-
-        await channel.send(leaderboard_message)
-    except Exception as e:
-        print(f"Error: {e}")
-        await ctx.send("Error retrieving leaderboard.")
-
-@bot.command(name='test')
-async def test(ctx):
-    await post_map_challenge()
-    await ctx.send("Test complete: Map challenge posted.")
-
-@bot.command(name='finish')
-async def finish(ctx):
-    await post_leaderboard(ctx)
-
-def schedule_map_challenge():
-    schedule.every().day.at(POST_TIME).do(lambda: bot.loop.create_task(post_map_challenge()))
-
-schedule_map_challenge()
-
-bot.run(DISCORD_TOKEN)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+asyncio.run(main())

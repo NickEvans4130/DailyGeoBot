@@ -1,0 +1,3 @@
+- if server ID not in JSON file, prompt user to use setup before any other commands
+- make logic so generate_challenge function depends on server ID 
+- fix logic for generate_challenge function depending on wether random settings or not
